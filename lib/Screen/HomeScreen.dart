@@ -9,7 +9,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int tabIndex = 0;
   List<bool> btnPush = [true, false];
-  Color selectColor = Colors.lightBlue;
+  Color selectColor = Color(0xFF2E83F6);
   Color unSelectColor = Colors.grey;
 
   @override
@@ -83,7 +83,6 @@ class _HomeScreenState extends State<HomeScreen> {
       case 0:
         return Tab1();
         break;
-
       case 1:
         return Tab2();
         break;
@@ -117,7 +116,7 @@ class _Tab1State extends State<Tab1> {
                   height: height * 0.08,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50)),
-                  buttonColor: Colors.deepPurple,
+                  buttonColor: Colors.deepPurple[300],
                   child: RaisedButton(
                     onPressed: () {
                       showDialog(
@@ -150,7 +149,7 @@ class _Tab1State extends State<Tab1> {
                           color: Colors.orangeAccent,
                           size: width * 0.035,
                         ),
-                        Text('50,000원',
+                        Text('50,000원 ~',
                             style: TextStyle(
                                 color: Colors.white, fontSize: width * 0.02))
                       ],
@@ -165,7 +164,7 @@ class _Tab1State extends State<Tab1> {
                   height: height * 0.08,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50)),
-                  buttonColor: Colors.deepPurple,
+                  buttonColor: Colors.deepPurple[300],
                   child: RaisedButton(
                     onPressed: () {
                       showDialog(
@@ -198,7 +197,7 @@ class _Tab1State extends State<Tab1> {
                           color: Colors.orangeAccent,
                           size: width * 0.035,
                         ),
-                        Text('35,000원',
+                        Text('35,000원 ~ ',
                             style: TextStyle(
                                 color: Colors.white, fontSize: width * 0.02))
                       ],
@@ -212,7 +211,7 @@ class _Tab1State extends State<Tab1> {
                   height: height * 0.08,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50)),
-                  buttonColor: Colors.deepPurple,
+                  buttonColor: Colors.deepPurple[300],
                   child: RaisedButton(
                     onPressed: () {
                       showDialog(
@@ -245,7 +244,7 @@ class _Tab1State extends State<Tab1> {
                           color: Colors.orangeAccent,
                           size: width * 0.035,
                         ),
-                        Text('70,000원',
+                        Text('70,000원 ~',
                             style: TextStyle(
                                 color: Colors.white, fontSize: width * 0.02))
                       ],
@@ -259,7 +258,7 @@ class _Tab1State extends State<Tab1> {
                   height: height * 0.08,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50)),
-                  buttonColor: Colors.deepPurple,
+                  buttonColor: Colors.deepPurple[300],
                   child: RaisedButton(
                     onPressed: () {
                       showDialog(
@@ -292,7 +291,7 @@ class _Tab1State extends State<Tab1> {
                           color: Colors.orangeAccent,
                           size: width * 0.035,
                         ),
-                        Text('100,000원',
+                        Text('100,000원 ~',
                             style: TextStyle(
                                 color: Colors.white, fontSize: width * 0.02))
                       ],
@@ -312,7 +311,149 @@ class Tab2 extends StatefulWidget {
 class _Tab2State extends State<Tab2> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    Size size = MediaQuery.of(context).size;
+    double width = size.width;
+    double height = size.height;
+    return Padding(
+      padding: EdgeInsets.all(width * 0.01),
+      child: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            RaisedButton(
+                padding: EdgeInsets.all(0),
+                onPressed: () {},
+                child: Container(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: width * 0.03, vertical: height * 0.02),
+                    alignment: Alignment.center,
+                    width: width * 0.7,
+                    height: height * 0.1,
+                    decoration: BoxDecoration(
+                        boxShadow: [BoxShadow(blurRadius: 2)],
+                        color: Colors.amber[50]),
+                    child: Row(children: [
+                      Icon(Icons.chat, size: width * 0.035),
+                      Text(
+                        '네이버 쇼핑몰 창업을 하고 싶어요.',
+                      ),
+                      Spacer(
+                        flex: 1,
+                      ),
+                      Column(
+                        children: [
+                          Text('필요한 컨설턴트'),
+                          Text(
+                            '1 / 4',
+                            style: TextStyle(fontSize: height * 0.02),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        width: width * 0.01,
+                      ),
+                      Icon(
+                        Icons.attach_money,
+                        color: Colors.orangeAccent,
+                        size: width * 0.035,
+                      ),
+                      Text('50,000원 ~ ',
+                          style: TextStyle(
+                              color: Colors.black, fontSize: width * 0.02))
+                    ]))),
+            SizedBox(
+              height: height * 0.01,
+            ),
+            RaisedButton(
+                padding: EdgeInsets.all(0),
+                onPressed: () {},
+                child: Container(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: width * 0.03, vertical: height * 0.02),
+                    alignment: Alignment.center,
+                    width: width * 0.7,
+                    height: height * 0.1,
+                    decoration: BoxDecoration(
+                        boxShadow: [BoxShadow(blurRadius: 2)],
+                        color: Colors.amber[50]),
+                    child: Row(children: [
+                      Icon(Icons.chat, size: width * 0.035),
+                      Text(
+                        '네이버 쇼핑몰 창업을 하고 싶어요.',
+                      ),
+                      Spacer(
+                        flex: 1,
+                      ),
+                      Column(
+                        children: [
+                          Text('필요한 컨설턴트'),
+                          Text(
+                            '1 / 4',
+                            style: TextStyle(fontSize: height * 0.02),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        width: width * 0.01,
+                      ),
+                      Icon(
+                        Icons.attach_money,
+                        color: Colors.orangeAccent,
+                        size: width * 0.035,
+                      ),
+                      Text('50,000원 ~ ',
+                          style: TextStyle(
+                              color: Colors.black, fontSize: width * 0.02))
+                    ]))),
+            SizedBox(
+              height: height * 0.01,
+            ),
+            RaisedButton(
+                padding: EdgeInsets.all(0),
+                onPressed: () {},
+                child: Container(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: width * 0.03, vertical: height * 0.02),
+                    alignment: Alignment.center,
+                    width: width * 0.7,
+                    height: height * 0.1,
+                    decoration: BoxDecoration(
+                        boxShadow: [BoxShadow(blurRadius: 2)],
+                        color: Colors.amber[50]),
+                    child: Row(children: [
+                      Icon(Icons.chat, size: width * 0.035),
+                      Text(
+                        '네이버 쇼핑몰 창업을 하고 싶어요.',
+                      ),
+                      Spacer(
+                        flex: 1,
+                      ),
+                      Column(
+                        children: [
+                          Text('필요한 컨설턴트'),
+                          Text(
+                            '1 / 4',
+                            style: TextStyle(fontSize: height * 0.02),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        width: width * 0.01,
+                      ),
+                      Icon(
+                        Icons.attach_money,
+                        color: Colors.orangeAccent,
+                        size: width * 0.035,
+                      ),
+                      Text('50,000원 ~ ',
+                          style: TextStyle(
+                              color: Colors.black, fontSize: width * 0.02))
+                    ]))),
+          ],
+        ),
+      ),
+    );
   }
 }
 

@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:soragodong/Screen/ProfileScreen.dart';
 
 import 'Screen/HomeScreen.dart';
+import 'Screen/RecordScreen.dart';
 
 main() {
   return runApp(MaterialApp(
     title: '소라고동 관리자화면',
-    theme: ThemeData(brightness: Brightness.light),
+    theme: ThemeData(
+      brightness: Brightness.light,
+      primaryColor: Colors.white,
+      accentColor: Colors.black,
+    ),
     home: TopView(),
   ));
 }
@@ -31,38 +37,34 @@ class _TopViewState extends State<TopView> with SingleTickerProviderStateMixin {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: Colors.white,
         //   toolbarHeight: height * 0.08,
         title: Row(
           children: [
             Text(
               '소라고동',
               style: TextStyle(
-                  fontWeight: FontWeight.bold, fontSize: width * 0.02),
+                  fontWeight: FontWeight.bold,
+                  fontSize: width * 0.02,
+                  fontFamily: 'Jalnan',
+                  color: Color(0xFF2E83F6)),
             ),
             Spacer(
               flex: 1,
             ),
-            ButtonTheme(
-              height: width * 0.02,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  side: BorderSide(color: Colors.transparent)),
-              child: RaisedButton(
-                color: Colors.white,
+            TextButton(
                 onPressed: () {},
                 child: Text(
                   '로그아웃',
-                  style: TextStyle(fontSize: width * 0.01),
-                ),
-              ),
-            ),
+                  style: TextStyle(
+                      color: Colors.black, fontWeight: FontWeight.bold),
+                )),
             Padding(
               padding: EdgeInsets.only(right: width * 0.03),
             )
           ],
         ),
-        elevation: 0, //앱바 하단 경계선을 지워준다.
+        //  elevation: 0, //앱바 하단 경계선을 지워준다.
         bottom: PreferredSize(
             preferredSize: Size.fromHeight(width * 0.025),
             child: Align(
@@ -77,8 +79,8 @@ class _TopViewState extends State<TopView> with SingleTickerProviderStateMixin {
                           topLeft: Radius.circular(10),
                           topRight: Radius.circular(10),
                         ),
-                        color: Colors.white),
-                    labelColor: Colors.black, //text뿐 아니라 icon의 색상도 자동 변경된다.
+                        color: Color(0xFF2E83F6)),
+                    labelColor: Colors.white, //text뿐 아니라 icon의 색상도 자동 변경된다.
                     unselectedLabelColor: Colors.black,
                     labelStyle: TextStyle(
                         fontWeight: FontWeight.bold, fontSize: width * 0.01),
@@ -98,7 +100,7 @@ class _TopViewState extends State<TopView> with SingleTickerProviderStateMixin {
             )),
       ),
       body: TabBarView(
-        children: [HomeScreen(), Container(), Container()],
+        children: [HomeScreen(), RecordScreen(), ProfileScreen()],
         controller: _tabController,
       ),
     );
